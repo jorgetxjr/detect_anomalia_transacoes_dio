@@ -47,10 +47,10 @@ Tal problema é demonstrado pela tabela de resposta do modelo *Logistic Regressi
 
 Este modelo traz como resultado a curva ROC e a relação Precision-Recall.
 
-![Curva ROC inicial](link_aqui)
+![Curva ROC inicial](https://github.com/jorgetxjr/detect_anomalia_transacoes_dio/blob/master/assets/roc_base.png)
 >Curva ROC
 
-![Curva Precision-Recall inicial](link_aqui)
+![Curva Precision-Recall inicial](https://github.com/jorgetxjr/detect_anomalia_transacoes_dio/blob/master/assets/precision-recall_base.png)
 
 >Curva Precision-Recall
 
@@ -71,10 +71,10 @@ Com uma nova análise do modelo *Logistic Regression*, os resultados foram os se
 
 Aplicando as mesmas características do modelo *Logistic Regression* no novo *dataset*, temos as seguintes curvas ROC e Precision-Recall:
 
-![Curva ROC undersampling](link_aqui)
+![Curva ROC undersampling](https://github.com/jorgetxjr/detect_anomalia_transacoes_dio/blob/master/assets/roc_undersampling.png)
 >Curva ROC
 
-![Curva Precision-Recall undersampling](link_aqui)
+![Curva Precision-Recall undersampling](https://github.com/jorgetxjr/detect_anomalia_transacoes_dio/blob/master/assets/precision-recall_undersampling.png)
 
 >Curva Precision-Recall
 
