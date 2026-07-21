@@ -1,10 +1,10 @@
 # Detectar anomalias de transações 
 
-[![Static Badge](https://img.shields.io/badge/-Entrega%20Final-white)](https://github.com/jorgetxjr/miniguia-estudos-notebooklm/tree/main#entrega-final)
+[![Static Badge](https://img.shields.io/badge/-Entrega%20Final-white)](https://github.com/jorgetxjr/detect_anomalia_transacoes_dio/blob/master/deteccao_fraudes.ipynb)
 [![Static Badge](https://img.shields.io/badge/-Meu%20LinkedIn-blue)](https://www.linkedin.com/in/jorge-teixeira-jr/)
 
 ## Sobre o projeto
-Executando o Aprendizado por Projetos (*Project Based Learning - PBL*) da [plataforma DIO](https://www.dio.me/), este projeto é para a análise de dados e detecção de fraudes bancárias.
+Executando o Aprendizado por Projetos (*Project Based Learning - PBL*) da [plataforma DIO](https://www.dio.me/), este projeto é para a análise de dados e segurança, usando o Python. Sendo o alvo deste projeto a identificação de fraudes bancárias.
 
 ## Tecnologias utilizadas
 A base de dados é fornecida pelo Google com dados despersonalizados. O desenvolvimento foi feito no VSCode usando a extensão do Jupyter Notebook - podendo ser executado também em sua versão de browser.
@@ -21,13 +21,13 @@ Para a execução deste projeto além do Python e Jupyter Notebook, são necess�
 
 Para a instalação, use no terminal o comando *pip install*, seguido da biblioteca desejada. Exemplo:
 
-```console
+```bash
 pip install pandas
 ```
 
 ## Problemas Enfrentados
-A principal característica desta base de dados é o seu desbalanço. Sendo 99% das operações válidas e menos de 1% como fraude. Os dados para inferência estatística e treinamento de modelos de aprendizado de máquina são envieasados, podendo levar ao *overfit* - quando o modelo desempenha bem no treinamento, mas nos testes e cenário real, não.
-Tal problema é demonstrado pela tabela de resposta do modelo Logistic Regression:
+A principal característica desta base de dados é o seu **desbalanço**. Sendo 99% das operações válidas e menos de 1% como fraude. Os dados para inferência estatística e treinamento de modelos de aprendizado de máquina são envieasados, podendo levar ao *overfit* - quando o modelo desempenha bem no treinamento, mas nos testes e cenário real, não.
+Tal problema é demonstrado pela tabela de resposta do modelo *Logistic Regression*:
 
 2000 iterações - Logistic Regression
 | Class / Metric | Precision | Recall | F1-Score | Support |
@@ -40,18 +40,23 @@ Tal problema é demonstrado pela tabela de resposta do modelo Logistic Regressio
 
 >0 = transação normal, 1 = fraude
 
+> [!WARNING]
+> **Sobre a execução do *Logistic Regression* com 2000 iterações:**
+> Haverá um aviso e não um erro, informando que a quantidade de execuções terminou antes de um resultado adequado. Todavia, valores maiores de iteração foram testandos e não afetam significativamente o resultado do modelo. 
+> **Pode ignorar o warning e prosseguir.**
+
 Este modelo traz como resultado a curva ROC e a relação Precision-Recall.
 
-(IMAGEM ROC)
+![Curva ROC inicial](link_aqui)
 >Curva ROC
 
-(IMAGEM PRECISION RECALL)
+![Curva Precision-Recall inicial](link_aqui)
 
 >Curva Precision-Recall
 
 ## Solução aplicada
 A solução usada para contornar este problema foi o *underfit*. O dataset original é diminuido, fazendo com que a quantidade de dados de transações normais e de fraude sejam iguais. 
-Com uma nova análise do modelo Logistic Regression, os resultados foram os seguintes:
+Com uma nova análise do modelo *Logistic Regression*, os resultados foram os seguintes:
 
 2000 iterações - Logistic Regression
 | Class / Metric | Precision | Recall | F1-Score | Support |
@@ -64,17 +69,19 @@ Com uma nova análise do modelo Logistic Regression, os resultados foram os segu
 
 >0 = transação normal, 1 = fraude
 
-Aplicando as mesmas características do modelo Logistic Regression no novo dataset, temos as seguintes curvas ROC e Precision-Recall:
+Aplicando as mesmas características do modelo *Logistic Regression* no novo *dataset*, temos as seguintes curvas ROC e Precision-Recall:
 
-(IMAGEM ROC)
+![Curva ROC undersampling](link_aqui)
 >Curva ROC
 
-(IMAGEM PRECISION RECALL)
+![Curva Precision-Recall undersampling](link_aqui)
 
 >Curva Precision-Recall
 
 ## Próximos passos
-Outros modelos como Overfit e Árvore de decisão também foram explicados e podem ser aplicados em continuidade, afim de comparar os resultados e buscando a otimização da entrega.
+Outros modelos como *Overfit* e Árvore de decisão também foram explicados e podem ser aplicados em continuidade, afim de comparar os resultados e buscando a otimização da entrega.
 
 ## Contribuições e contato
+Críticas, sugestões e melhorias são sempre bem vindas para o engrandecimento de meu conhecimento!
+
 [![Static Badge](https://img.shields.io/badge/-Meu%20LinkedIn-blue)](https://www.linkedin.com/in/jorge-teixeira-jr/)
